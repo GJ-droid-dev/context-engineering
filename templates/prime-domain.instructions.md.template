@@ -1,0 +1,93 @@
+---
+applyTo: "[GLOB_PATTERN]"
+---
+
+<!-- INSTRUCTIONS:
+     Replace [GLOB_PATTERN] with the file pattern this applies to, e.g.:
+       "backend/src/**"             ← all backend source files
+       "frontend/src/**"            ← all frontend source files
+       "**/payment*,**/settlement*" ← payment-related files
+       "backend/tests/**"           ← test files
+       "backend/prisma/**"          ← schema and migrations
+     
+     This file loads automatically in GitHub Copilot when you open or edit
+     files matching the glob pattern. Keep it under 500 tokens.
+     Delete these instruction comments when done. -->
+
+# [DOMAIN] Rules
+
+<!-- Replace [DOMAIN] with the domain name, e.g., "Backend", "Frontend", "Payments", "Testing" -->
+
+## Error Handling
+
+<!-- How errors are handled in this domain. Be specific to your stack. -->
+
+[Error handling rules]
+
+## Authentication & Authorization
+
+<!-- Which auth requirements apply to this domain. -->
+
+[Auth rules]
+
+## Patterns to Follow
+
+<!-- Required patterns. Agent should use these without being asked. -->
+
+- [Pattern 1]
+- [Pattern 2]
+- [Pattern 3]
+
+## Patterns to Avoid
+
+<!-- Things the agent must not do, even if they seem reasonable. -->
+
+- Never [anti-pattern 1]
+- Never [anti-pattern 2]
+
+## Import Conventions
+
+<!-- Path aliases, preferred imports, banned imports. -->
+
+```typescript
+// ✅ Always use path alias
+import { X } from '@/utils/x';
+
+// ❌ Never use relative paths
+import { X } from '../../../utils/x';
+```
+
+## Response / Output Format
+
+<!-- Specific to this domain. E.g., API response format, component structure. -->
+
+[Format rules with code examples]
+
+## Testing Requirements
+
+<!-- What tests are required for changes in this domain. -->
+
+- [Test requirement 1]
+- [Test requirement 2]
+
+## Key Files in This Domain
+
+```
+[path]   ← [what it is]
+[path]   ← [what it is]
+```
+
+## Example: Correct Implementation
+
+<!-- A concise example showing all rules applied correctly. 
+     This is the most valuable section — a concrete reference. -->
+
+```typescript
+// ✅ Correct: [what this shows]
+[code example]
+```
+
+```typescript
+// ❌ Wrong: [what to avoid]
+[counter-example]
+```

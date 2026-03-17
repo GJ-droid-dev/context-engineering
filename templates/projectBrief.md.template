@@ -1,0 +1,66 @@
+# Project Brief
+
+<!-- INSTRUCTIONS: Fill in every section. Keep total file under 600 tokens.
+     This file loads every session. Every word costs tokens. Be dense, not verbose.
+     Delete these instruction comments when done. -->
+
+## What This Is
+
+<!-- One paragraph. Product name, what it does, who uses it, current stage (MVP/production/v2). -->
+
+[PROJECT_NAME] is a [DESCRIPTION]. Used by [USERS]. Currently in [STAGE].
+
+## Tech Stack
+
+- **Backend:** [e.g., Node.js 20, Express, TypeScript, Prisma ORM]
+- **Database:** [e.g., PostgreSQL 16]
+- **Frontend:** [e.g., Next.js 14, MUI v6, Redux Toolkit]
+- **Auth:** [e.g., JWT — access 15min, refresh 7 days]
+- **Queues:** [e.g., BullMQ + Redis]
+- **Storage:** [e.g., S3 / Cloudflare R2]
+- **Hosting:** [e.g., Railway, Vercel, AWS]
+- **Payments:** [e.g., Stripe, Razorpay]
+
+## Architecture Decisions
+
+<!-- List the major choices made and why. These are things the agent must not second-guess. -->
+
+- **[Decision]:** [Rationale and consequence]
+- **[Decision]:** [Rationale and consequence]
+
+## Patterns We Always Follow
+
+<!-- Rules, not explanations. The agent follows these without discussion. -->
+
+- [Pattern 1]
+- [Pattern 2]
+- [Pattern 3]
+
+## Patterns We Never Do
+
+<!-- Things the agent should refuse or flag, even if asked. -->
+
+- Never [anti-pattern 1]
+- Never [anti-pattern 2]
+
+## Key File Locations
+
+```
+[file/path]     ← [what it is]
+[file/path]     ← [what it is]
+[file/path]     ← [what it is]
+```
+
+## Domain Rules
+
+<!-- Reference domain-specific rule files rather than inlining them -->
+
+- Backend patterns: `.github/instructions/backend.instructions.md` (or `.claude/skills/backend-patterns/SKILL.md`)
+- Frontend patterns: `.github/instructions/frontend.instructions.md`
+- [Domain]: [file path]
+
+## Current Status
+
+<!-- One line. What phase is the product in? What's the current major workstream? -->
+
+[CURRENT_STATUS]

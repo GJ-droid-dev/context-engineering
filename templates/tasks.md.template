@@ -1,0 +1,79 @@
+# Tasks
+
+<!-- INSTRUCTIONS: Single source of truth for task status. 
+     The agent reads this to know what's done, what's in progress, and what's next.
+     Update in real time. Never let it drift more than one session out of date.
+     Delete these instruction comments when done. -->
+
+## Active Sprint / Milestone
+
+**Focus:** [Sprint goal or milestone name]  
+**Deadline:** [Date or "no deadline"]
+
+---
+
+## In Progress
+
+<!-- Tasks currently being worked on. Maximum 3 in progress at once. -->
+
+| Task | Owner | Started | Notes |
+|------|-------|---------|-------|
+| [Task description] | [human/agent] | [date] | [Any relevant context] |
+
+---
+
+## Backlog (Prioritized)
+
+<!-- Ordered by priority. Top = most important. -->
+
+### High Priority
+
+- [ ] [Task 1] — [brief context if needed]
+- [ ] [Task 2] — [brief context if needed]
+
+### Medium Priority
+
+- [ ] [Task 3]
+- [ ] [Task 4]
+
+### Low Priority / Nice to Have
+
+- [ ] [Task 5]
+
+---
+
+## Completed
+
+<!-- Move tasks here when done. Keep last 2 weeks. Archive older ones. -->
+
+| Task | Completed | Notes |
+|------|-----------|-------|
+| [Task] | [date] | [Any key outcome or lesson] |
+
+---
+
+## Blocked
+
+<!-- Tasks that can't proceed. Must have a reason and an owner to unblock. -->
+
+| Task | Blocked By | Unblock Owner |
+|------|------------|---------------|
+| [Task] | [What's blocking it] | [Who needs to act] |
+
+---
+
+## Discovered / Scope Additions
+
+<!-- Things that emerged during work. Not yet prioritized. -->
+
+- [Discovered item — when found]
+
+---
+
+## Gaps / Known Issues
+
+<!-- Gaps in functionality identified but not yet scheduled. -->
+
+| ID | Description | Priority |
+|----|-------------|----------|
+| GAP-01 | [Gap description] | High/Medium/Low |

@@ -1,0 +1,57 @@
+# Active Context
+
+<!-- INSTRUCTIONS: This file changes frequently. It answers: "what are we doing right now?"
+     Update it after every significant task. Keep it under 400 tokens.
+     Delete these instruction comments when done. -->
+
+## Current Focus
+
+<!-- One sentence. What is the active workstream? -->
+
+[CURRENT_FOCUS]
+
+## In Progress
+
+<!-- Specific tasks currently being worked on. Use checkboxes. -->
+
+- [ ] [Task 1]
+- [ ] [Task 2]
+- [ ] [Task 3]
+
+## Recently Completed
+
+<!-- What was done in the last 1–2 sessions? Brief, enough to jog memory. -->
+
+- ✅ [Completed task + date]
+- ✅ [Completed task + date]
+
+## Recent Decisions
+
+<!-- Decisions made in the last 48–72 hours. Include the rationale. -->
+
+| Decision | Rationale | Date |
+|----------|-----------|------|
+| [Decision] | [Why] | [Date] |
+
+## Known Blockers
+
+<!-- What's preventing progress? Empty = no blockers. -->
+
+- [Blocker + what's needed to unblock]
+
+## Next Steps (Ordered)
+
+<!-- Maximum 5. Specific and actionable. -->
+
+1. [Next step]
+2. [Next step]
+3. [Next step]
+
+## Open Questions
+
+<!-- Things needing a decision before work can proceed. -->
+
+- [Question + who needs to answer it]
+
+---
+*Last updated: [DATE]*

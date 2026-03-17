@@ -1,0 +1,64 @@
+# [PROJECT_NAME] — AI Context Hub
+
+<!-- INSTRUCTIONS: This is the primary file the AI agent reads. It's a routing table, not a dump.
+     Keep it SHORT — under 500 tokens. Every section should point to where more detail lives.
+     This file should answer: "what is this, and where do I go for X?"
+     Delete these instruction comments when done. -->
+
+## What This Is
+
+[One paragraph. Product, users, stage.]
+
+## Tech Stack (Summary)
+
+- Backend: [stack]
+- Database: [stack]
+- Frontend: [stack]
+- Hosting: [where]
+
+## Key Rules (Always Apply)
+
+<!-- 3–7 absolute rules. Single lines only. If it needs explanation, it goes in a skill file. -->
+
+1. [Rule]
+2. [Rule]
+3. [Rule]
+
+## Key File Locations
+
+```
+[path]    ← [what it is]
+[path]    ← [what it is]
+[path]    ← [what it is]
+```
+
+## Where to Find More Context
+
+| Need | Go To |
+|------|-------|
+| Backend patterns | `.github/instructions/backend.instructions.md` |
+| Frontend patterns | `.github/instructions/frontend.instructions.md` |
+| Payment logic | `.github/instructions/payments.instructions.md` |
+| Database patterns | `.github/instructions/database.instructions.md` |
+| Current tasks | `tasks/todo.md` |
+| Project architecture | `memory-bank/projectBrief.md` |
+| Codebase patterns | `memory-bank/systemPatterns.md` |
+| What we're doing now | `memory-bank/activeContext.md` |
+| Accumulated lessons | `tasks/lessons.md` |
+| Last session | `tasks/HANDOFF.md` |
+
+## Session Start Protocol
+
+```
+1. Read memory-bank/activeContext.md
+2. Read tasks/HANDOFF.md
+3. Recall recent memory (if MCP memory server is active)
+4. Confirm understanding before starting the task
+```
+
+## Validation Before Completing Any Task
+
+```
+npx tsc --noEmit          # 0 TypeScript errors
+npm test -- --no-coverage # all tests pass
+```
