@@ -1,6 +1,6 @@
 # context-engineering
 
-> Coding agents lose their mind around message 40. They hallucinate APIs they've never seen, forget decisions made an hour ago, and repeat mistakes across every session. This repo gives them a memory architecture — curated patterns, versioned rules, and a layered context system that makes your agent measurably smarter with every task. Everything here is open, synthesized from 13 real tools, and maintained as plain markdown — you can read exactly what your agent loads, remix it for your stack, and contribute what works back to the field.
+> Coding agents lose their mind around message 40. They hallucinate APIs they've never seen, forget decisions made an hour ago, and repeat mistakes across every session. This repo gives them a memory architecture — curated patterns, versioned rules, and a layered context system that makes your agent measurably smarter with every task. Everything here is open, synthesized from 16 real tools, and maintained as plain markdown — you can read exactly what your agent loads, remix it for your stack, and contribute what works back to the field.
 
 ---
 
@@ -67,15 +67,18 @@ context-engineering/
 ├── tools/                             ← one file per tool, sourced from real repos
 │   ├── docs/
 │   │   ├── context7.md               ← real-time library docs via MCP
-│   │   └── context-hub.md            ← curated, versioned, annotatable docs
+│   │   ├── context-hub.md            ← curated, versioned, annotatable docs
+│   │   └── code-review-graph.md      ← structural codebase graph; blast-radius context selection
 │   ├── memory/
 │   │   ├── basic-memory.md           ← bi-directional Markdown knowledge graph
 │   │   ├── conport.md                ← SQLite project knowledge graph
+│   │   ├── hindsight.md              ← biomimetic memory + reflective synthesis
 │   │   ├── icm.md                    ← MCP-native session memory
 │   │   └── mem0.md                   ← application-level memory SDK
 │   ├── workflow/
-│   │   ├── memory-bank.md            ← phase-based workflow + token savings
-│   │   └── ecc.md                    ← skills/agents/rules system
+│   │   ├── ecc.md                    ← skills/agents/rules system
+│   │   ├── gsd.md                    ← reference implementation: fresh context per task
+│   │   └── memory-bank.md            ← phase-based workflow + token savings
 │   └── compression/
 │       └── rtk.md                    ← 60–90% token reduction proxy
 │
@@ -85,6 +88,7 @@ context-engineering/
 │   ├── phase-gated-context.md
 │   ├── bidirectional-memory.md
 │   ├── file-memory-structure.md
+│   ├── reflective-memory.md
 │   └── sub-agent-isolation.md
 │
 ├── editors/                           ← editor-specific implementation guides
@@ -116,7 +120,7 @@ context-engineering/
 
 ## Sources
 
-This repo synthesizes 13 open-source tools and frameworks:
+This repo synthesizes 16 open-source tools and frameworks:
 
 | Source | Why It Matters | Contribution to This Repo |
 |--------|----------------|---------------------------|
@@ -133,6 +137,9 @@ This repo synthesizes 13 open-source tools and frameworks:
 | [rtk-ai/icm](https://github.com/rtk-ai) | MCP-native session memory + VS Code auto-config | Session-level memory |
 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | Anthropic's reference Memory MCP server | MCP as universal integration layer |
 | [run-llama/llama_index](https://github.com/run-llama/llama_index) | Why hybrid BM25 + vector search beats either alone | RAG theoretical foundation |
+| [vectorize-io/hindsight](https://github.com/vectorize-io/hindsight) | SOTA LongMemEval; biomimetic retain/recall/reflect architecture | Reflective memory pattern; Layer 1 extension |
+| [gsd-build/gsd-2](https://github.com/gsd-build/gsd-2) | Full agent runtime implementing phase-gating + sub-agent isolation as code | Reference implementation of Layer 4 patterns |
+| [tirth8205/code-review-graph](https://github.com/tirth8205/code-review-graph) | 6.8x token reduction via blast-radius structural analysis | Structural progressive loading pattern |
 
 ---
 

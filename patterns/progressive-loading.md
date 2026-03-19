@@ -124,6 +124,34 @@ Compare to eager loading where you spend 20,000+ tokens on context before the fi
 
 **Cursor Memory Bank** demonstrated ~70% token reduction by moving from eager to phase-gated loading. The same principle applied to any project's domain files will produce proportional savings.
 
+**code-review-graph** extends this principle to structural analysis: instead of path-pattern triggers, it computes the exact blast radius of a change from a pre-built AST graph, achieving 6.8x average token reduction on code review tasks and up to 49x on monorepo changes.
+
+---
+
+## Structural Graph Loading (code-review-graph variant)
+
+The tier system above uses file paths and domain keywords to decide what to load. A more precise alternative — for code review and refactoring tasks — is **structural graph loading**: compute which files to load from the actual dependency graph of the codebase.
+
+```
+Changed: src/services/payment.service.ts
+
+Blast radius (computed from AST graph):
+  Direct callers:   src/routes/payment.routes.ts
+                    src/controllers/checkout.controller.ts
+  Test coverage:    tests/payment.service.test.ts
+
+Minimal review set: 4 files (not 47)
+```
+
+This replaces the "load files matching *payment*, *settlement*" heuristic with a mechanically correct answer derived from static analysis. The agent loads fewer files with higher relevance — token budget efficiency and review quality both improve.
+
+**When to use this variant:**
+- Code review tasks where impact analysis is needed
+- Refactoring across interconnected files
+- Any task where you need to know "what else could break?"
+
+**Tool:** [code-review-graph](../tools/docs/code-review-graph.md) — builds the graph automatically, updates incrementally on file changes, works as an MCP plugin in Claude Code.
+
 ---
 
 ## Related Patterns

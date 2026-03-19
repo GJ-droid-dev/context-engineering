@@ -154,6 +154,38 @@ Never enter REVIEW phase without completion confirmed in BUILD.
 
 ---
 
+## Dispatch-Based Phase Gating (GSD-2 variant)
+
+The phase systems above use agent instructions to enforce phase boundaries — the agent is told to load only phase-appropriate context. A harder enforcement mechanism: **fresh context window per task**, where the phase boundary is a process boundary.
+
+[GSD-2](../tools/workflow/gsd.md) implements this: every task, research step, and planning phase runs in a completely fresh 200k-token context window. The previous session is gone. Phase transition is not an instruction — it's a restart.
+
+```
+Instructions-based (soft):           Dispatch-based (hard):
+
+Phase 1: PLAN                        Phase 1: PLAN
+  Load: plan rules                     New process → fresh context
+  Agent: "I'll unload these..."        Inject: plan rules + task only
+  [context accumulates]                Execute → write S01-PLAN.md to disk
+                                       Process ends
+Phase 2: BUILD                       Phase 2: BUILD
+  Unload: plan rules (maybe)           New process → fresh context
+  Load: build rules                    Read S01-PLAN.md from disk
+  [leftover plan context leaks in]     Inject: build rules + plan file
+                                       Execute → write T01-SUMMARY.md
+```
+
+The state that carries between phases is the **written artifact** — `S01-PLAN.md`, `T01-SUMMARY.md`, `DECISIONS.md` — not the conversation. This makes phase isolation guaranteed rather than instructed.
+
+**When this matters:**
+- Long-running autonomous sessions (hours, not minutes)
+- Multi-agent workflows where different models handle different phases
+- Any scenario where you've seen context rot degrade quality across tasks
+
+**Trade-off:** Harder to implement (requires a runtime, not just prompts). Start with instruction-based phase gating and move to dispatch-based only when soft isolation proves insufficient.
+
+---
+
 ## Related Patterns
 
 - [Progressive Loading](progressive-loading.md) — the token budget effect of phase gating

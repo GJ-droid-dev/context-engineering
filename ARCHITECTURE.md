@@ -1,6 +1,6 @@
 # Architecture: Context Engineering for AI Coding Agents
 
-This document maps all 13 source tools onto a unified 5-layer context architecture. Use it to understand why each tool exists, where it sits in the stack, and how layers combine.
+This document maps all 16 source tools onto a unified 5-layer context architecture. Use it to understand why each tool exists, where it sits in the stack, and how layers combine.
 
 ---
 
@@ -72,6 +72,7 @@ Full WISC breakdown: [framework/wisc.md](framework/wisc.md)
 | [mem0](tools/memory/mem0.md) | TypeScript/Python SDK; three-tier memory (User / Session / Agent); +26% LOCOMO benchmark | Production apps; agents that need user-level memory |
 | [MCP Memory Server](https://github.com/modelcontextprotocol/servers) | Anthropic's reference implementation; knowledge graph via MCP protocol | Connecting memory to any MCP-compatible editor |
 | [LlamaIndex](https://github.com/run-llama/llama_index) | RAG framework; hybrid BM25 + vector search | Large document corpora; semantic retrieval |
+| [Hindsight](tools/memory/hindsight.md) | Biomimetic memory (world facts / experiences / mental models); retain + recall + reflect; SOTA LongMemEval | Production agents that need to learn, not just remember |
 
 **Key pattern:** [File Memory Structure](patterns/file-memory-structure.md)
 
@@ -89,8 +90,9 @@ Full WISC breakdown: [framework/wisc.md](framework/wisc.md)
 |------|--------------|----------|
 | [Context7](tools/docs/context7.md) | MCP server; `npx ctx7 setup`; pulls docs from 49k+ libraries in real-time | Any modern library or framework in active development |
 | [Context Hub](tools/docs/context-hub.md) | CLI; curated, versioned, annotatable doc bundles; MCP server | Internal APIs; niche libraries not in Context7's catalog |
+| [code-review-graph](tools/docs/code-review-graph.md) | Tree-sitter AST graph; blast-radius analysis; computes minimal review set from static analysis; 6.8x avg token reduction | Code review; impact analysis; refactoring in large codebases |
 
-**Key insight:** These two tools are complementary, not competing. Context7 covers the long tail of public libraries. Context Hub covers internal, proprietary, or carefully curated sets.
+**Key insight:** These tools are complementary. Context7 covers external library docs; Context Hub covers internal API docs; code-review-graph covers your own codebase structure. Context7 covers the long tail of public libraries. Context Hub covers internal, proprietary, or carefully curated sets.
 
 **Key pattern:** [Project Brief Bootstrap](patterns/project-brief-bootstrap.md)
 
@@ -133,6 +135,7 @@ Full WISC breakdown: [framework/wisc.md](framework/wisc.md)
 |------|--------------|----------|
 | [Cursor Memory Bank](tools/workflow/memory-bank.md) | 6-phase workflow (VAN→PLAN→CREATIVE→BUILD→REFLECT→ARCHIVE); complexity levels 1–4; hierarchical rule loading | Project workflows requiring strict phase control |
 | [ECC (everything-claude-code)](tools/workflow/ecc.md) | 108 skills, 25 agents, 57 commands; CLAUDE.md hub; sub-agent orchestration | Full agent harness systems; skills-as-files pattern |
+| [GSD-2](tools/workflow/gsd.md) | TypeScript agent runtime; fresh context window per task; .gsd/ disk-state machine; per-phase model routing; crash recovery | Autonomous long-running agent sessions; reference implementation of sub-agent isolation + phase-gating |
 
 **Key patterns:** [Phase-Gated Context](patterns/phase-gated-context.md), [Sub-Agent Isolation](patterns/sub-agent-isolation.md)
 
@@ -169,7 +172,10 @@ Full WISC breakdown: [framework/wisc.md](framework/wisc.md)
 | Cursor Memory Bank | 4 | I + S | Phase-gating; ~70% token reduction |
 | ECC | 4 | I + W | Skills-as-files; agent orchestration |
 | WISC Framework | 4 | W+I+S+C | The organizing philosophy |
+| GSD-2 | 4 | I + S + W | Reference implementation; fresh context per task |
 | RTK | 5 | C | 60–90% I/O token compression |
+| Hindsight | 1 | W | Biomimetic memory; retain/recall/reflect operations |
+| code-review-graph | 2 | S | Blast-radius graph; structural context selection |
 
 ---
 
