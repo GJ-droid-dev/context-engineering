@@ -40,6 +40,7 @@ activeContext.md         ← what we're currently working on and why
 - [Basic Memory](../tools/memory/basic-memory.md) — agent writes Observations and Relations to Markdown
 - [ECC](../tools/workflow/ecc.md) — the CLAUDE.md hub pattern; skills-as-files
 - [Context Hub](../tools/docs/context-hub.md) — curated, versioned doc bundles authored by humans
+- [Hindsight](../tools/memory/hindsight.md) — retain/recall/reflect; agents that learn patterns from accumulated experience across sessions, not just retrieve recent facts
 
 **Key principle:** The W layer is your single source of truth. If an agent could drift or forget it — write it down.
 
@@ -79,6 +80,7 @@ Orchestrator → PlanningAgent (reads: requirements, architecture)
 **I-layer tools from this repo:**
 - [ECC](../tools/workflow/ecc.md) — 25 named sub-agents with defined context scopes
 - [Cursor Memory Bank](../tools/workflow/memory-bank.md) — 6 phases, each with a defined context set
+- [GSD-2](../tools/workflow/gsd.md) — fresh context window per task; hard process-boundary isolation between Milestones, Slices, and Tasks (not just instruction-level)
 
 **Key principle:** The correct scope for an agent is the minimum context needed to do its job well. Not more.
 
@@ -118,6 +120,7 @@ Task: "Fix the auth middleware bug"
 - [ConPort](../tools/memory/conport.md) — semantic search over logged decisions; retrieves relevant ones
 - [Basic Memory](../tools/memory/basic-memory.md) — hybrid BM25 + vector search over the knowledge graph
 - [ICM](../tools/memory/icm.md) — retrieves the relevant slice of session history
+- [code-review-graph](../tools/docs/code-review-graph.md) — blast-radius structural selection; loads only the dependency graph of the changed file (avg 6.8x token reduction)
 
 **Key principle:** Context selection is a query, not a dump. The better you define what "relevant" means for a task, the better the selection.
 

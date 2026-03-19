@@ -31,6 +31,9 @@
 }
 ```
 
+**Hindsight (production agents that need to learn):**  
+Editor-agnostic — deploy as a Docker service, integrate via client SDK. In Cursor workflows, call `retain` to store decisions and patterns, `recall` to retrieve them, and `reflect` at phase transitions to synthesize abstract understanding. See [tools/memory/hindsight.md](../tools/memory/hindsight.md).
+
 ---
 
 ## Layer 2 — Documentation Context
@@ -47,6 +50,9 @@
   }
 }
 ```
+
+**code-review-graph — structural context selection:**  
+A Claude Code plugin that uses AST dependency graphs to identify the blast radius of any change. Install in Claude Code: `claude plugin marketplace add tirth8205/code-review-graph`. Achieves avg 6.8x token reduction. In Cursor, replicate the pattern manually with `@file` references scoped to files in the dependency graph of your change. See [tools/docs/code-review-graph.md](../tools/docs/code-review-graph.md).
 
 ---
 

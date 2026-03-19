@@ -3,7 +3,7 @@
 > The agent doesn't just read from your knowledge base — it writes back to it. Every conversation is an opportunity to grow the project's structured knowledge, not just consume it.
 
 **WISC dimension:** W (Write — agent as author, not just reader)  
-**Validated by:** [Basic Memory](../tools/memory/basic-memory.md) (the only tool built specifically for this)
+**Validated by:** [Basic Memory](../tools/memory/basic-memory.md) (original bidirectional implementation), [Hindsight](../tools/memory/hindsight.md) (extends the pattern with structured `retain`/`recall`/`reflect` and cross-session synthesis)
 
 ---
 

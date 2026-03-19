@@ -73,6 +73,9 @@ Or add directly:
 }
 ```
 
+**Hindsight (production agents that need to learn):**  
+Editor-agnostic — deploy as a Docker service, integrate via client SDK. In Cline workflows, call `retain` after significant decisions, `recall` at task start to retrieve relevant context, and `reflect` at phase transitions to synthesize abstract understanding across sessions. See [tools/memory/hindsight.md](../tools/memory/hindsight.md).
+
 ---
 
 ## Layer 2 — Documentation Context
@@ -89,6 +92,9 @@ Add via Cline MCP GUI or config:
 ```
 
 Usage: add `use context7` to your prompt. Cline will inject current docs for the library referenced.
+
+**code-review-graph — structural context selection:**  
+A Claude Code plugin (`claude plugin marketplace add tirth8205/code-review-graph`) that computes the blast-radius dependency graph of any change. Cline’s agentic mode pairs well with this — load only the files actually affected by a change rather than the full codebase. Achieves avg 6.8x token reduction. See [tools/docs/code-review-graph.md](../tools/docs/code-review-graph.md).
 
 ---
 

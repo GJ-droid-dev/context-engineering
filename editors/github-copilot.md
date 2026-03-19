@@ -40,6 +40,9 @@ Gives the agent `create_entities`, `create_relations`, `search_nodes`, `open_nod
 **Option B: mem0 (if you're building a product with user memory)**  
 Use the mem0 TypeScript SDK in your application backend. Not directly in Copilot — mem0 is for production agents, not developer tooling.
 
+**Option C: Hindsight (production agents that need to learn over time)**  
+Deploy Hindsight as a Docker service and connect via the Python or TypeScript client. Adds `retain`, `recall`, and `reflect` operations. The key differentiator is `reflect`: it synthesizes accumulated memory into abstract understanding at phase transitions, not just stores raw facts. See [tools/memory/hindsight.md](../tools/memory/hindsight.md).
+
 ---
 
 ## Layer 2 — Documentation Context
@@ -73,6 +76,9 @@ context-hub serve --mcp
   }
 }
 ```
+
+**code-review-graph — structural context selection (Claude Code plugin):**  
+Installs as a Claude Code plugin (`claude plugin marketplace add tirth8205/code-review-graph`), not a VS Code MCP server. If you use Claude Code alongside Copilot, add it there for 6.8x average token reduction via blast-radius dependency graph analysis. The pattern — load only files in the change’s dependency graph — is manually achievable in Copilot via targeted `#file:` references. See [tools/docs/code-review-graph.md](../tools/docs/code-review-graph.md).
 
 ---
 
