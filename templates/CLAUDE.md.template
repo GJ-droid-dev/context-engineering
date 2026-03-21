@@ -56,6 +56,16 @@
 4. Confirm understanding before starting the task
 ```
 
+## Context File Discipline
+
+<!-- Context files are state snapshots. Rewrite before appending. Git is the archive.
+     Before updating activeContext.md, todo.md, or HANDOFF.md:
+       1. Check if it exceeds its soft cap (activeContext: 400t | todo: 600t | HANDOFF: 500t / 2 sessions)
+       2. If yes: rewrite with current state only, then add new content
+       3. Drop completed/resolved items — do not summarize them into the file
+     See: patterns/context-pruning.md
+-->
+
 ## Validation Before Completing Any Task
 
 ```

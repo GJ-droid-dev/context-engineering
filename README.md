@@ -89,7 +89,8 @@ context-engineering/
 │   ├── bidirectional-memory.md
 │   ├── file-memory-structure.md
 │   ├── reflective-memory.md
-│   └── sub-agent-isolation.md
+│   ├── sub-agent-isolation.md
+│   └── context-pruning.md             ← rewrite-on-update discipline; size-threshold pruning
 │
 ├── editors/                           ← editor-specific implementation guides
 │   ├── github-copilot.md
@@ -101,6 +102,7 @@ context-engineering/
     ├── activeContext.md.template
     ├── tasks.md.template
     ├── CLAUDE.md.template
+    ├── HANDOFF.md.template
     └── prime-domain.instructions.md.template
 ```
 

@@ -1,9 +1,16 @@
 # Tasks
 
-<!-- INSTRUCTIONS: Single source of truth for task status. 
-     The agent reads this to know what's done, what's in progress, and what's next.
-     Update in real time. Never let it drift more than one session out of date.
-     Delete these instruction comments when done. -->
+<!-- PRUNING CONTRACT
+     Type: state-snapshot
+     Soft Cap: 600 tokens
+     Hard Cap: 900 tokens
+     Keep: In Progress (max 3), Backlog (unprioritized), Blocked, Discovered/untriaged, open Gaps
+     Drop: Completed table rows beyond 10; all resolved Gaps
+     Trigger: When Completed table exceeds 10 rows OR file exceeds 600 tokens
+     Before pruning: git commit current file first — that commit IS the history
+     Archive: git history
+     See: patterns/context-pruning.md
+-->
 
 ## Active Sprint / Milestone
 
@@ -44,7 +51,9 @@
 
 ## Completed
 
-<!-- Move tasks here when done. Keep last 2 weeks. Archive older ones. -->
+<!-- Move tasks here when done. Keep last 10 rows maximum.
+     When this table exceeds 10 rows: git commit first, then empty this table entirely.
+     Git is the archive — do not move rows to an archive file. -->
 
 | Task | Completed | Notes |
 |------|-----------|-------|
@@ -72,7 +81,7 @@
 
 ## Gaps / Known Issues
 
-<!-- Gaps in functionality identified but not yet scheduled. -->
+<!-- Open (unresolved) gaps only. Drop resolved gaps — they belong in git history, not here. -->
 
 | ID | Description | Priority |
 |----|-------------|----------|

@@ -262,3 +262,4 @@ project-root/
 - **One prompt file per workflow.** "Implement endpoint", "Write tests", "Review diff", "Run migration" — each is a prompt file.
 - **Keep `copilot-instructions.md` short.** If it's over 600 tokens, split it. It loads for every interaction.
 - **Use agent mode for multi-file tasks.** Chat mode is for Q&A. Agent mode is for implementation work spanning multiple files.
+- **Context files rot if you append.** `activeContext.md`, `todo.md`, and `HANDOFF.md` are state snapshots — rewrite them, don't grow them. See [Context Pruning](../patterns/context-pruning.md) for the size thresholds and per-file rules.

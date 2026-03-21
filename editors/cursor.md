@@ -219,3 +219,4 @@ project-root/
 - **Use `alwaysApply: false` with `globs`** for domain rules. This is the Cursor equivalent of Copilot's `applyTo`.
 - **Combine Memory Bank with ConPort.** Memory Bank handles the workflow phases; ConPort handles the persistent knowledge graph.
 - **Commit `.cursor/rules/`** to version control so the whole team benefits.
+- **Context files rot if you append.** `activeContext.md`, `todo.md`, and `HANDOFF.md` are state snapshots — rewrite them, don't grow them. See [Context Pruning](../patterns/context-pruning.md) for the size thresholds and per-file rules.

@@ -241,3 +241,4 @@ project-root/
 - **`@url` is underused.** You can pass library docs directly from a URL: `@url:https://orm.drizzle.team/docs/select` — a lightweight alternative to Context7 for one-off docs.
 - **Basic Memory suits Cline well** because Cline generates a lot of conversation artifacts that are worth preserving as knowledge graph nodes.
 - **Commit `.clinerules/`** — it's the shared team context. New team members get a fully oriented agent by cloning.
+- **Context files rot if you append.** `activeContext.md`, `todo.md`, and `HANDOFF.md` are state snapshots — rewrite them, don't grow them. See [Context Pruning](../patterns/context-pruning.md) for the size thresholds and per-file rules.

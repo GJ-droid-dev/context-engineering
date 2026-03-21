@@ -1,0 +1,53 @@
+# Handoff
+
+<!-- PRUNING CONTRACT
+     Type: state-snapshot (max 2 sessions at any time)
+     Soft Cap: 500 tokens
+     Hard Cap: 700 tokens
+     Keep: what was being worked on, unresolved decisions/blockers, exact next step for incoming session
+     Drop: sessions older than current + 1 prior; completed items now in code; design rationale that belongs in systemPatterns.md
+     Trigger: Every session end — writing a new session entry triggers pruning of the oldest
+     Archive: git history
+     See: patterns/context-pruning.md
+-->
+
+---
+
+## Session [DATE] — [Brief one-line description of session]
+
+### What Was Being Worked On
+
+<!-- One to three sentences. What was the active task when this session ended? -->
+
+[Description of active work]
+
+### Completed This Session
+
+<!-- 3–5 bullets max. Only items whose completion affects the next session's starting point. -->
+
+- [Completed item]
+- [Completed item]
+
+### Unresolved / Carry Forward
+
+<!-- Decisions not made, blockers not cleared, open questions. If empty, great. -->
+
+- [Unresolved item or decision]
+
+### Immediate Next Step
+
+<!-- The single most important thing the next session should do first. -->
+
+[Next step — specific and actionable]
+
+### Context the Next Session Needs
+
+<!-- Optional. Only if there's something non-obvious that would otherwise require re-discovery. -->
+
+- [Context note]
+
+---
+
+<!-- PRIOR SESSION SUMMARY (drop when a third session is added)
+     [DATE]: [2–3 line summary of what that session accomplished and any lingering effect on current work]
+-->

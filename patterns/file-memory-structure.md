@@ -189,3 +189,4 @@ Files that exceed these limits should be split, not padded.
 - [Project Brief Bootstrap](project-brief-bootstrap.md) — what goes in projectBrief.md
 - [Progressive Loading](progressive-loading.md) — how to load these files efficiently
 - [Bidirectional Memory](bidirectional-memory.md) — how lessons.md gets populated
+- [Context Pruning](context-pruning.md) — enforcing the size caps above; rewrite-on-update discipline; git as archive

@@ -96,9 +96,11 @@ Most developers forget to unload. After a task is complete:
 
 1. Clear or archive `task/currentTask.md`
 2. Remove domain files that are no longer relevant
-3. Update `activeContext.md` with the new state
+3. Update `activeContext.md` with the new state — rewrite it, don't append to it
 
 Failing to unload means the next task inherits noise from the previous one.
+
+> **Context files accumulate.** `activeContext.md`, `todo.md`, and `HANDOFF.md` grow unbounded when agents append instead of rewrite. See [Context Pruning](context-pruning.md) for the size-threshold rules and the rewrite-on-update discipline that keeps them clean.
 
 ---
 

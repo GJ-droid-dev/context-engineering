@@ -1,8 +1,15 @@
 # Active Context
 
-<!-- INSTRUCTIONS: This file changes frequently. It answers: "what are we doing right now?"
-     Update it after every significant task. Keep it under 400 tokens.
-     Delete these instruction comments when done. -->
+<!-- PRUNING CONTRACT
+     Type: state-snapshot
+     Soft Cap: 400 tokens
+     Hard Cap: 600 tokens
+     Keep: in-progress tasks, unresolved blockers, decisions <48h old, next steps (max 5), open questions
+     Drop: Recently Completed items beyond 2 entries; decisions >72h old that are now in code
+     Trigger: When "Recently Completed" list reaches 3+ items OR file exceeds 400 tokens
+     Archive: git history — do not move content elsewhere, just drop it
+     See: patterns/context-pruning.md
+-->
 
 ## Current Focus
 
@@ -20,14 +27,14 @@
 
 ## Recently Completed
 
-<!-- What was done in the last 1–2 sessions? Brief, enough to jog memory. -->
+<!-- Maximum 2 items. When a 3rd is added, prune this entire section back to 2. -->
 
 - ✅ [Completed task + date]
 - ✅ [Completed task + date]
 
 ## Recent Decisions
 
-<!-- Decisions made in the last 48–72 hours. Include the rationale. -->
+<!-- Decisions made in the last 48–72 hours only. Drop decisions already reflected in code. -->
 
 | Decision | Rationale | Date |
 |----------|-----------|------|

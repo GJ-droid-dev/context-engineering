@@ -137,7 +137,7 @@ Full WISC breakdown: [framework/wisc.md](framework/wisc.md)
 | [ECC (everything-claude-code)](tools/workflow/ecc.md) | 108 skills, 25 agents, 57 commands; CLAUDE.md hub; sub-agent orchestration | Full agent harness systems; skills-as-files pattern |
 | [GSD-2](tools/workflow/gsd.md) | TypeScript agent runtime; fresh context window per task; .gsd/ disk-state machine; per-phase model routing; crash recovery | Autonomous long-running agent sessions; reference implementation of sub-agent isolation + phase-gating |
 
-**Key patterns:** [Phase-Gated Context](patterns/phase-gated-context.md), [Sub-Agent Isolation](patterns/sub-agent-isolation.md)
+**Key patterns:** [Phase-Gated Context](patterns/phase-gated-context.md), [Sub-Agent Isolation](patterns/sub-agent-isolation.md), [Context Pruning](patterns/context-pruning.md)
 
 ---
 
@@ -173,6 +173,7 @@ Full WISC breakdown: [framework/wisc.md](framework/wisc.md)
 | ECC | 4 | I + W | Skills-as-files; agent orchestration |
 | WISC Framework | 4 | W+I+S+C | The organizing philosophy |
 | GSD-2 | 4 | I + S + W | Reference implementation; fresh context per task |
+| Context Pruning | 4 | W | Rewrite-on-update discipline; size-threshold pruning; git as archive |
 | RTK | 5 | C | 60–90% I/O token compression |
 | Hindsight | 1 | W | Biomimetic memory; retain/recall/reflect operations |
 | code-review-graph | 2 | S | Blast-radius graph; structural context selection |
